@@ -9,27 +9,27 @@
 }
 
 body {
-  margin: 0;
   font-family: "Roboto", sans-serif;
   background-color: #202632;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  margin: 0 auto;
 
   #root {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
 
     .App {
       background: #313b47;
       color: #cee2e9;
       border-radius: 10px;
       width: 60%;
+      max-width: 500px;
       text-align: center;
-      padding: 5rem;
+      padding: 4rem 2rem;
       position: relative;
 
       .advice {
@@ -42,32 +42,37 @@ body {
 
       .quote-text {
         font-size: 1.5rem;
-        line-height: 2rem;
         font-weight: 700;
+        line-height: 2rem;
         margin-bottom: 2.5rem;
         text-wrap: balance;
+        min-height: 60px;
       }
 
-      .divider::before,
-      .divider::after {
-        position: relative;
-        border-top: 1px solid #cee2e9;
-        display: inline-block;
-        vertical-align: middle;
-        width: 50%;
-        margin-bottom: 0.15em;
-        overflow: hidden;
-        content: "";
-      }
-      .divider::before {
-        right: 0.5em;
-        margin-left: -50%;
+      .divider {
+        &::before,
+        &::after {
+          position: relative;
+          border-top: 1px solid #cee2e9;
+          display: inline-block;
+          vertical-align: middle;
+          width: 50%;
+          margin-bottom: 0.15em;
+          overflow: hidden;
+          content: "";
+        }
+
+        &::before {
+          right: 0.5em;
+          margin-left: -50%;
+        }
+
+        &::after {
+          left: 0.5em;
+          margin-right: -50%;
+        }
       }
 
-      .divider::after {
-        left: 0.5em;
-        margin-right: -50%;
-      }
       .lines {
         font-size: 1rem;
         font-weight: 900;
@@ -97,7 +102,6 @@ body {
           height: 64px;
           font-size: 24px;
           color: #313b47;
-          transition: 0.3s;
 
           &:hover {
             background-color: #3ab376;
@@ -108,6 +112,34 @@ body {
 
     .ToastContainer {
       margin-top: 20px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    #root {
+      .App {
+        width: 90%;
+        padding: 3rem 1.5rem;
+
+        .quote-text {
+          font-size: 1.5rem;
+          min-height: 50px;
+        }
+
+        .button-container {
+          bottom: -25px;
+          gap: 15px;
+
+          button {
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+            padding: 12px;
+          }
+        }
+      }
     }
   }
 }
