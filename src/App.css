@@ -15,6 +15,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
   margin: 0 auto;
 
   #root {
@@ -27,7 +28,6 @@ body {
       color: #cee2e9;
       border-radius: 10px;
       width: 60%;
-
       text-align: center;
       padding: 5rem;
       position: relative;
@@ -107,7 +107,7 @@ body {
     }
 
     .ToastContainer {
-      margin-top: 2rem;
+      margin-top: 20px;
     }
   }
 }
