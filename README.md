@@ -48,3 +48,4 @@ export default tseslint.config({
   },
 })
 ```
+Published to https://random-js-quotes.surge.sh/
